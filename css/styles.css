@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	font-family: "Raleway", sans-serif;
+	background: #fff;
+}
+
+#app {
+	padding: 20px 40px 50px;
+}
+
+ul {
+	list-style: none;
+}
+
+.header {
+	
+}
+
+nav {
+	text-transform: uppercase;
+}
+
+section {
+	padding: 30px;
+}
+
+h2 {
+	font-family: "Great Vibes", cursive;
+	text-align: center;
+	font-size: 50px;
+	color: #0075ff;
+	margin: 10px;
+	padding: 10px 10px 60px;
+}
+
+h2:nth-of-type(2) {
+	padding: 10px 10px 100px;
+}
+
+h3 {
+	margin: 20px;
+	font-size: 20px;
+	color: #e85679;
+}
+
+.md-button {
+	display: block;
+	margin:  40px auto;
+	line-height: inherit;
+}
+
+.girl {
+	position: relative;
+}
+
+.girl-body{
+	background: url("../images/girl.png") no-repeat center center;
+	height: 420px;
+}
+
+.girl-hair {
+	position: absolute;
+	top: -25px;
+	left: 50%;
+	transform: translate(-50%);
+	height: 207px;
+	width: 220px;
+	background: url("../images/hair1.png") no-repeat center center;
+}
+
+.girl-clothes {
+	position: absolute;
+	top: 203px;
+	left: 50%;
+	transform: translate(-50%);
+	width: 161px;
+	height: 161px;
+}
+
+.girl-shoes {
+	position: absolute;
+	bottom: -3px;
+	left: 50%;
+	transform: translate(-50%);
+	width: 300px;
+	height: 20px;
+}
+
+.options h3 {
+	text-align: center;
+}
+
+.prev,
+.next {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background-color: #333;
+	padding: 20px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+	transition: opacity .4s ease-in-out;
+}
+
+.prev:hover,
+.next:hover {
+	opacity: 0.7;
+}
+
+.girl-hair-item {
+	height: 70px;
+}
+
+.girl-hair-1 {
+	background: url("../images/hair1.png") no-repeat center / contain;
+}
+
+.girl-hair.girl-hair-2 {
+	width: 226px;
+	top: -45px;
+	transform: translate(-52%);
+}
+
+.girl-hair-2 {
+	background: url("../images/hair2.png") no-repeat center / contain;
+}
+
+.girl-hair-3 {
+	background: url("../images/hair3.png") no-repeat center / contain;
+}
+
+.girl-hair-4 {
+	background: url("../images/hair4.png") no-repeat center / contain;
+}
+
+.girl-hair.girl-hair-4 {
+	width: 220px;
+	top: -65px;
+	transform: translate(-52%);
+
+}
+
+.girl-hair-5 {
+	background: url("../images/hair5.png") no-repeat center / contain;
+}
+
+.girl-hair.girl-hair-5,
+.girl-hair.girl-hair-6 {
+	width: 286px;
+	top: -55px;
+	transform: translate(-51%);
+}
+
+.girl-hair-6 {
+	background: url("../images/hair6.png") no-repeat center / contain;
+}
+
+.girl-hair-7 {
+	background: url("../images/hair7.png") no-repeat center / contain;
+}
+
+.girl-hair.girl-hair-7, 
+.girl-hair.girl-hair-8 {
+	width: 220px;
+	top: -65px;
+	transform: translate(-52%);
+}
+
+.girl-hair-8 {
+	background: url("../images/hair8.png") no-repeat center / contain;
+}
+
+
+.girl-hair-options,
+.boy-hair-options,
+.girl-clothes-options,
+.boy-clothes-options,
+.girl-shoes-options
+{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.girl-hair-item,
+.girl-clothes-item,
+.boy-hair-item,
+.boy-clothes-item,
+.girl-shoes-item
+{
+	height: 100px;
+	min-width: 300px;
+}
+
+.girl-clothes-0 {
+	background: url("../images/dress0.png") no-repeat center;
+}
+
+.girl-clothes.girl-clothes-0 {
+	background: transparent;
+}
+
+.girl-clothes-1 {
+	background: url("../images/dress1.png") no-repeat center / contain;
+}
+
+.girl-clothes.girl-clothes-4 {
+	width: 202px;
+}
+
+.girl-clothes-2 {
+	background: url("../images/dress2.png") no-repeat center / contain;
+}
+
+.girl-clothes-3 {
+	background: url("../images/dress3.png") no-repeat center / contain;
+}
+
+.girl-clothes-4 {
+	background: url("../images/dress4.png") no-repeat center / contain;
+}
+
+.girl-clothes.girl-clothes-4 {
+	top: 230px;
+	width: 202px;
+	transform: translate(-46%);
+}
+
+.girl-clothes-5 {
+	background: url("../images/dress5.png") no-repeat center / contain;
+}
+
+.girl-clothes-6 {
+	background: url("../images/dress6.png") no-repeat center / contain;
+}
+
+.girl-clothes.girl-clothes-6 {
+	width: 114px;
+	height: 184px;
+	top: 197px;
+}
+
+.girl-shoes-item {
+	height: 20px;
+}
+
+.girl-shoes-0 {
+	background: url("../images/shoes0.png") no-repeat center;
+}
+
+.girl-shoes.girl-shoes-0 {
+	background: transparent;
+}
+
+.girl-shoes-1 {
+	background: url("../images/shoes1.png") no-repeat center / contain;
+}
+
+.girl-shoes-2 {
+	background: url("../images/shoes2.png") no-repeat center / contain;
+}
+
+.girl-shoes-3 {
+	background: url("../images/shoes3.png") no-repeat center / contain;
+}
+
+.girl-shoes-4 {
+	background: url("../images/shoes4.png") no-repeat center / contain;
+}
+
+.girl-shoes-5 {
+	background: url("../images/shoes5.png") no-repeat center / contain;
+}
+
+.form {
+	width: 500px;
+	margin: 70px auto;
+}
+
+label {
+	color: rgba(0,0,0,0.54);
+	font-size: 16px;
+}
+
+.boy {
+	position: relative;
+	margin-top: 45px;
+}
+
+.boy-body{
+	background: url("../images/boy.png") no-repeat center center / contain;
+	height: 480px;
+}
+
+.boy-hair {
+	position: absolute;
+	top: -52px;
+	left: 50%;
+	transform: translate(-50%);
+	height: 200px;
+	width: 200px;
+	background: url("../images/boyhair1.png") no-repeat center center / contain;
+}
+
+.boy-hair-1 {
+	background: url("../images/boyhair1.png") no-repeat center center / contain;
+}
+
+.boy-hair-2 {
+	background: url("../images/boyhair2.png") no-repeat center center / contain;
+}
+
+.boy-hair-3 {
+	background: url("../images/boyhair3.png") no-repeat center center / contain;
+	width: 187px;
+	top: -60px;
+}
+
+.boy-clothes {
+	position: absolute;
+	top: 169px;
+	left: 50%;
+	transform: translate(-50%);
+	width: 205px;
+	height: 245px;
+}
+
+.boy-clothes-0 {
+	background: url("../images/boyclothes0.png") no-repeat center center;
+}
+
+.boy-clothes.boy-clothes-0 {
+	background: transparent;
+}
+
+.boy-clothes-1 {
+	background: url("../images/boyclothes1.png") no-repeat center center / contain;
+	
+}
+
+.boy-clothes-2 {
+	background: url("../images/boyclothes2.png") no-repeat center center / contain;
+}
+
+.boy-clothes.boy-clothes-2 {
+	top: 199px;
+}
+
+.boy-clothes-3 {
+	background: url("../images/boyclothes3.png") no-repeat center center / contain;
+}
+
+.boy-clothes.boy-clothes-3 {
+	top: 199px;
+}
+
+.card {
+	width: 400px;
+	margin: 20px;
+	padding: 70px 20px 20px;
+	border: 2px solid #eee;
+	border-radius: 30px;
+	box-shadow: 0 0 20px rgba(100, 100, 100, .2);
+	text-align: center;
+}
+
+.card .girl {
+	margin-top: 90px;
+}
+
+.name {
+	display: block;
+	padding: 40px 10px 15px;
+	font-size: 17px;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 600;
+	color: #777;
+}
+
+.zodiac-icon {
+	width: 50px;
+	height: auto;
+	padding-left: 10px;
+}
+
+.about {
+	display: block;
+	text-align: center;
+	color: #999;
+}
+
+.hobbies {
+	display: block;
+	text-align: center;
+	padding: 20px 10px 7px;
+	color: #777;
+	font-size: 16px;
+}
+
+.hobby {
+	text-transform: lowercase;
+	display: block;
+	text-align: center;
+	color: #999;
+}
+
+.friends {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+}
+
+.md-button span {
+	font-size: 20px;
+	color: red;
+}
+
+.result {
+	text-align: center;
+}
+
+.result span {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.percentage {
+	color: red;
+	font-weight: bold;
+}
+
+.result-text {
+	margin: 20px;
+	padding: 20px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.red-text {
+	color: red;
+}
+
+.heart {
+	animation-name: hearts;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes hearts {
+	0% {
+		background: url("../images/hearts.png") no-repeat center center;
+		background-size: 0% 0%; 
+	}
+	100% {
+		background: url("../images/hearts.png") no-repeat center center / contain;
+	}
+}
+
+.footer {
+	text-align: center;
+	padding: 20px;
+}
+
+.footer .copy {
+	color: #ccc;
+}
+
+.footer a:hover {
+	text-decoration: none;
+}

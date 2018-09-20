@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Girls</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
+	<link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/vue-material.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<header class="header">
+	</header>
+	<main id="app" class="main">
+		<section v-if="showForms">
+			<h2>Girl</h2>
+			<div class="girl">
+				<div class="girl-body"></div>
+				<div class="girl-hair" :class=`girl-hair-${girl.currentHair}`></div>
+				<div class="girl-clothes" :class=`girl-clothes-${girl.currentClothes-1}`></div>
+				<div class="girl-shoes" :class=`girl-shoes-${girl.currentShoes-1}`></div>
+			</div>
+			<div class="options">
+				<section>
+					<h3>Choose hair</h3>
+					<div class="girl-hair-options">
+						<nav class="prev" @click="prev(girl, girl.girlHair, 'currentHair')">prev</nav>
+						<div class="girl-hair-item" :class=`girl-hair-${girl.currentHair}`></div>
+						<nav class="next" @click="next(girl, girl.girlHair, 'currentHair')">next</nav>
+					</div>
+				</section>
+				<section>
+					<h3>Choose clothes</h3>
+					<div class="girl-clothes-options">
+						<nav class="prev" @click="prev(girl, girl.girlClothes, 'currentClothes')">prev</nav>
+						<div class="girl-clothes-item" :class=`girl-clothes-${girl.currentClothes-1}`></div>
+						<nav class="next" @click="next(girl, girl.girlClothes, 'currentClothes')">next</nav>
+					</div>
+				</section>
+				<section>
+					<h3>Choose shoes</h3>
+					<div class="girl-shoes-options">
+						<nav class="prev" @click="prev(girl, girl.girlShoes, 'currentShoes')">prev</nav>
+						<div class="girl-shoes-item" :class=`girl-shoes-${girl.currentShoes-1}`></div>
+						<nav class="next" @click="next(girl, girl.girlShoes, 'currentShoes')">next</nav>
+					</div>
+				</section>
+			</div>
+			<div class="form">
+				<form action="">
+					<md-field>
+						<label>Name</label>
+						<md-input v-model="girl.name" required></md-input>
+					</md-field>
+					<md-field>
+						<label for="zodiacsign">Zodiac sign</label>
+						<md-select v-model="girl.zodiacsign">
+							<md-option v-for="sign in zodiacsigns" :key="sign.id" :value="sign">{{ sign }}</md-option>
+						</md-select>
+					</md-field>
+					<div>
+						<label for="hobbies">Hobbies</label><br>
+						<md-checkbox v-for="hobby in hobbies" :key="hobby.id" v-model="girl.hobbies" :value="hobby" >{{ hobby }}</md-checkbox>
+					</div>
+					<md-field>
+						<label>About</label>
+						<md-textarea v-model="girl.about" md-autogrow></md-textarea>
+					</md-field>
+				</form>
+			</div>
+		</section>
+		<section v-if="showForms">
+			<h2>Boy</h2>
+			<div class="boy">
+				<div class="boy-body"></div>
+				<div class="boy-hair" :class=`boy-hair-${boy.currentHair}`></div>
+				<div class="boy-clothes" :class=`boy-clothes-${boy.currentClothes-1}`></div>
+				<div class="boy-shoes" :class=`boy-shoes-${boy.currentShoes-1}`></div>
+			</div>
+			<div class="options">
+				<section>
+					<h3>Choose hair</h3>
+					<div class="boy-hair-options">
+						<nav class="prev" @click="prev(boy, boy.boyHair, 'currentHair')">prev</nav>
+						<div class="boy-hair-item" :class=`boy-hair-${boy.currentHair}`></div>
+						<nav class="next" @click="next(boy, boy.boyHair, 'currentHair')">next</nav>
+					</div>
+				</section>
+				<section>
+					<h3>Choose clothes</h3>
+					<div class="boy-clothes-options">
+						<nav class="prev" @click="prev(boy, boy.boyClothes, 'currentClothes')">prev</nav>
+						<div class="boy-clothes-item" :class=`boy-clothes-${boy.currentClothes-1}`></div>
+						<nav class="next" @click="next(boy, boy.boyClothes, 'currentClothes')">next</nav>
+					</div>
+				</section>
+			</div>
+			<div class="form">
+				<form action="">
+					<md-field>
+						<label>Name</label>
+						<md-input v-model="boy.name" required></md-input>
+					</md-field>
+					<md-field>
+						<label for="zodiacsign">Zodiac sign</label>
+						<md-select v-model="boy.zodiacsign">
+							<md-option v-for="sign in zodiacsigns" :key="sign.id" :value="sign">{{ sign }}</md-option>
+						</md-select>
+					</md-field>
+					<div>
+						<label for="hobbies">Hobbies</label><br>
+						<md-checkbox v-for="hobby in hobbies" :key="hobby.id" v-model="boy.hobbies" :value="hobby" >{{ hobby }}</md-checkbox>
+					</div>
+					<md-field>
+						<label>About</label>
+						<md-textarea v-model="boy.about" md-autogrow></md-textarea>
+					</md-field>
+					<md-button class="md-raised" @click="submit" :disabled="girl.name === '' || boy.name === ''">Submit</md-button>
+				</form>
+			</div>			
+		</section>
+		<div v-if="showFriends">
+			<div class="friends" :class="{ heart: showHeart }">
+				<section class="card">
+					<div class="boy">
+						<div class="boy-body"></div>
+						<div class="boy-hair" :class=`boy-hair-${boy.currentHair}`></div>
+						<div class="boy-clothes" :class=`boy-clothes-${boy.currentClothes-1}`></div>
+						<div class="boy-shoes" :class=`boy-shoes-${boy.currentShoes-1}`></div>
+					</div>
+					<span class="name">{{ boy.name }}</span>
+					<img v-if="boy.zodiacsign" :src=`images/zodiac/${boy.zodiacsign}.png` class="zodiac-icon">
+					<span v-if="boy.about" class="hobbies">About:</span>
+					<span v-if="boy.about" class="about">{{ boy.about }}</span>
+					<span v-if="boy.hobbies.length > 0" class="hobbies">Interests: </span><span v-for="hobby in boy.hobbies" class="hobby">{{ hobby }}</span>
+				</section>
+				<section class="card">
+					<div class="girl">
+						<div class="girl-body"></div>
+						<div class="girl-hair" :class=`girl-hair-${girl.currentHair}`></div>
+						<div class="girl-clothes" :class=`girl-clothes-${girl.currentClothes-1}`></div>
+						<div class="girl-shoes" :class=`girl-shoes-${girl.currentShoes-1}`></div>
+					</div>
+					<span class="name">{{ girl.name }}</span>
+					<img v-if="girl.zodiacsign" :src=`images/zodiac/${girl.zodiacsign}.png` class="zodiac-icon">
+					<span v-if="girl.about" class="hobbies">About:</span>
+					<span v-if="girl.about" class="about">{{ girl.about }}</span>
+					<span v-if="girl.hobbies.length > 0" class="hobbies">Interests: </span><span v-for="hobby in girl.hobbies" class="hobby">{{ hobby }}</span>
+				</section>		
+			</div>
+			<md-button class="md-raised" @click="getCompatibility"><span>❤</span> Compatibility</md-button>
+			<p v-if="compatibility > 0" class="result"><span>{{ boy.name }}</span> and <span>{{ girl.name }}</span> <span class="percentage">{{ compatibility }}%</span></p>
+			<p v-if="compatibility >= 90" class="result-text red-text">Congratulations!!! You won a romantic trip to the Caribbean islands!</p>
+			<p v-else-if="compatibility >= 75 && compatibility < 90" class="result-text">Great compatibility! Congratulations!</p>
+			<p v-else-if="compatibility < 75 && compatibility >= 20" class="result-text">Not bad!</p>
+			<p v-else-if="compatibility < 20 && compatibility >= 0" class="result-text">Sorry! It seems you'd better look for someone else...</p>
+		</div>
+	</main>
+	<footer class="footer">by <a href="https://github.com/olenalymar">lena</a>, 2018</footer>
+	<script src ="https://unpkg.com/vue"></script>
+	<script src="https://unpkg.com/vue-material@beta"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
