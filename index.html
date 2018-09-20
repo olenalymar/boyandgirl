@@ -129,7 +129,7 @@
 						<div class="boy-shoes" :class=`boy-shoes-${boy.currentShoes-1}`></div>
 					</div>
 					<span class="name">{{ boy.name }}</span>
-					<img v-if="boy.zodiacsign" :src=`images/zodiac/${boy.zodiacsign}.png` class="zodiac-icon">
+					<img v-if="boy.zodiacsign" :src=`images/zodiac/${boy.zodiacsign.toLowerCase()}.png` class="zodiac-icon">
 					<span v-if="boy.about" class="hobbies">About:</span>
 					<span v-if="boy.about" class="about">{{ boy.about }}</span>
 					<span v-if="boy.hobbies.length > 0" class="hobbies">Interests: </span><span v-for="hobby in boy.hobbies" class="hobby">{{ hobby }}</span>
@@ -142,7 +142,7 @@
 						<div class="girl-shoes" :class=`girl-shoes-${girl.currentShoes-1}`></div>
 					</div>
 					<span class="name">{{ girl.name }}</span>
-					<img v-if="girl.zodiacsign" :src=`images/zodiac/${girl.zodiacsign}.png` class="zodiac-icon">
+					<img v-if="girl.zodiacsign" :src=`images/zodiac/${girl.zodiacsign.toLowerCase()}.png` class="zodiac-icon">
 					<span v-if="girl.about" class="hobbies">About:</span>
 					<span v-if="girl.about" class="about">{{ girl.about }}</span>
 					<span v-if="girl.hobbies.length > 0" class="hobbies">Interests: </span><span v-for="hobby in girl.hobbies" class="hobby">{{ hobby }}</span>
