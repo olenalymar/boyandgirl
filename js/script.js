@@ -113,6 +113,8 @@ const vm = new Vue({
 		submit: function() {
 			this.showForms = false;
 			this.showFriends = true;
+			this.girl.zodiacsign.toLowerCase();
+			this.boy.zodiacsign.toLowerCase();
 
 		},
 		getCompatibility: function() {
